@@ -1,4 +1,16 @@
 class Game {
+  constructor(){
+
+    this.player = new Player(200, 100)
+
+  }
+
+  draw() {
+    // clear();
+    this.player.draw()
+  }
+
+
   drawGrid() {
     // Iteration 1
     // Draw the grid
@@ -18,26 +30,47 @@ class Game {
   }  
 }
 
+
+
 class Player {
   constructor(col, row) {
     this.col = col;
     this.row = row;
+    this.width = 100
+    this.height = 100
+    this.image
+
   }
+
+
+  preload() {
+
+    this.image = loadImage('assets/character-down.png')
+  
+  
+  }
+
 moveUp (){
-  this.col -= 1
+  this.col -= 100
 }
 
 moveDown(){
-  this.col += 1
+  this.col += 100
 }
 
 moveLeft(){
-  this.row -= 1
+  this.row -= 100
 
 }
 
 moveRight(){
-  this.row += 1
+  this.row += 100
+}
+
+draw() {
+  // console.log('hallo')
+
+  image(this.image, this.col, this.row, this.width, this.height)
 }
 
 
