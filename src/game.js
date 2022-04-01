@@ -7,7 +7,7 @@ class Game {
 
   draw() {
     // clear();
-    this.player.draw()
+    this.player.draw();
   }
 
 
@@ -34,8 +34,8 @@ class Game {
 
 class Player {
   constructor(col, row) {
-    this.col = col;
-    this.row = row;
+    this.col = 0;
+    this.row = 0;
     this.width = 100
     this.height = 100
     this.image
@@ -51,28 +51,34 @@ class Player {
   }
 
 moveUp (){
-  this.col -= 100
+ // console.log('hallo')
+  this.row -= 100;
 }
 
 moveDown(){
-  this.col += 100
+  this.row += 100;
 }
 
 moveLeft(){
-  this.row -= 100
+  this.col -= 100;
 
 }
 
 moveRight(){
-  this.row += 100
+  this.col += 100;
 }
+
 
 draw() {
   // console.log('hallo')
 
   image(this.image, this.col, this.row, this.width, this.height)
+  if (keyIsDown(65)) {
+    this.moveRight()
+  }
+
+  
+  }
 }
 
 
-
-}
