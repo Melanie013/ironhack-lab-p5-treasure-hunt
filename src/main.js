@@ -4,6 +4,7 @@ const game = new Game();
 function preload() {
 // console.log('this is the preload')
 game.player.preload()
+game.treasure.preload()
 }
 
 function setup() {

@@ -1,13 +1,15 @@
 class Game {
   constructor(){
 
-    this.player = new Player(200, 100)
+    this.player = new Player(200, 200)
+    this.treasure = new Treasure(300, 300)
 
   }
 
   draw() {
     // clear();
     this.player.draw();
+    this.treasure.draw();
   }
 
 
@@ -47,7 +49,6 @@ class Player {
 
     this.image = loadImage('assets/character-down.png')
   
-  
   }
 
 moveUp (){
@@ -73,12 +74,33 @@ draw() {
   // console.log('hallo')
 
   image(this.image, this.col, this.row, this.width, this.height)
-  if (keyIsDown(65)) {
-    this.moveRight()
   }
 
-  
+
+
+}
+
+
+
+class Treasure {
+  constructor(col, row) {
+    this.col = 300;
+    this.row = 300;
+    this.image
+    this.width = 100
+    this.height = 100
+  }
+
+  preload(){
+    this.image = loadImage('/assets/treasure.png')
+  }
+ 
+
+  draw() {
+    image(this.image, this.col, this.row, this.width, this.height)
+
   }
 }
+
 
 
